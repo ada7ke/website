@@ -4,17 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ada's Coding Tutoring</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
 </head>
 <body>
   <header>
     <div class="nav-container">
       <div class="logo">Ada's Coding Tutoring</div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="enroll.html">Enroll</a>
+        <a href="{{ '/index.html' | relative_url }}">Home</a>
+        <a href="{{ '/curriculum.html' | relative_url }}">Curriculum</a>
+        <a href="{{ '/pricing.html' | relative_url }}">Pricing</a>
+        <a href="{{ '/faqs.html' | relative_url }}">FAQs</a>
+        <a href="{{ '/about.html' | relative_url }}">About Me</a>
+        <a href="{{ '/enroll.html' | relative_url }}">Enroll</a>
       </nav>
     </div>
   </header>
@@ -24,7 +26,7 @@
   </section>
 
   {{ content }}
-  
-  <script src="js/script.js"></script>
+
+  <script src="{{ '/js/script.js' | relative_url }}"></script>
 </body>
 </html>

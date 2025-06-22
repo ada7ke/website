@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ada's Coding Tutoring</title>
-  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
+  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
@@ -20,12 +20,12 @@
         <span></span>
       </div>
       <nav id="nav-links">
-        <a href="{{ '/index.html' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
-<a href="{{ '/curriculum.html' | relative_url }}" class="{% if page.url == '/curriculum.html' %}active{% endif %}">Curriculum</a>
-<a href="{{ '/pricing.html' | relative_url }}" class="{% if page.url == '/pricing.html' %}active{% endif %}">Pricing</a>
-<a href="{{ '/faqs.html' | relative_url }}" class="{% if page.url == '/faqs.html' %}active{% endif %}">FAQs</a>
-<a href="{{ '/about.html' | relative_url }}" class="{% if page.url == '/about.html' %}active{% endif %}">About Me</a>
-<a href="{{ '/enroll.html' | relative_url }}" class="{% if page.url == '/enroll.html' %}active{% endif %}">Enroll</a>
+        <a href="/index.html" class="">Home</a>
+<a href="/curriculum.html" class="">Curriculum</a>
+<a href="/pricing.html" class="active">Pricing</a>
+<a href="/faqs.html" class="">FAQs</a>
+<a href="/about.html" class="">About Me</a>
+<a href="/enroll.html" class="">Enroll</a>
 
       </nav>
     </div>
@@ -35,11 +35,39 @@
     <h1>Ada's Coding Tutoring</h1>
   </section>
 
-  {{ content }}
+  <section class="content">
+  <div class="pricing">
+    <div class="pricing-heading">
+      <h1>Pricing</h1>
+    </div>
+    <div class="pricing-text">
+      <table class="pricing-table">
+        <thead>
+          <th>Class Duration</th>
+          <th>Cost per class</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>45 min</td>
+            <td>$20</td>
+          </tr>
+          <tr>
+            <td>1 hour</td>
+            <td>$25</td>
+          </tr>
+          <tr>
+            <td>1.5 hours</td>
+            <td>$30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="{{ '/js/script.js' | relative_url }}"></script>
+  <script src="/js/script.js"></script>
 
 </body>
 </html>

@@ -175,7 +175,6 @@ nav {
   margin: 2rem auto;
   padding-inline: clamp(1rem, 10vw, 5rem);
   gap: 2rem 2rem;
-  /* transform: translateX(30px); */
 }
 /* #endregion */
 
@@ -186,7 +185,7 @@ nav {
 
 /* #region CLASS OVERVIEW */
 .class-overview-heading {
-  width: 225px;
+  width: 217px;
   border-bottom: 3px solid #272727;
   font-size: 20px;
   margin-bottom: 10px;
@@ -194,7 +193,7 @@ nav {
 /* #endregion */
 
 /* #region ABOUT ME */
-.about-me {
+.introduction {
   background: linear-gradient(130deg, #3a4a60, #1e2836);
   padding: 2rem;
   border-radius: 20px;
@@ -226,7 +225,7 @@ nav {
   background-position: 75% 25%;
 }
 
-.about-me-heading {
+.introduction-heading {
   border-bottom: 2px solid white;
   width: 110px;
   font-size: 18px;
@@ -243,14 +242,14 @@ nav {
 }
 
 .curriculum-heading {
-  width: 350px;
+  width: 302px;
   border-bottom: 3px solid #272727;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
 .example-projects-heading {
-  width: 350px;
+  width: 245px;
   border-bottom: 3px solid #272727;
   font-size: 20px;
   margin-bottom: 5px;
@@ -419,25 +418,106 @@ nav {
 /* #endregion */
 
 /* #region PRICING */
+
 .pricing-heading {
-  width: 110px;
+  width: 102px;
+  border-bottom: 3px solid #272727;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.pricing-visual {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+}
+
+.option1 {
+  background: #ffae18;
+  border-radius: 50px 0px;
+  padding: 2rem 2rem;
+}
+
+.option2 {
+  background: #0DB6BF;
+  border-radius: 50px 0px;
+  padding: 2rem 2rem;
+}
+
+.pricing-info {
+  background: white;
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0 0 4px #2727277a;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pricing-info-heading {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.price-tag {
+  justify-content: center;
+  display: flex;
+  align-items: baseline;
+}
+
+.dollar-sign {
+  font-weight: 1000;
+  font-size: 35px;
+  display: inline-block;
+  transform: translateY(-15px);
+}
+
+.price-number {
+  font-weight: 1000;
+  font-size: 60px;
+  display: inline-block;
+}
+
+.per-class {
+  font-weight: 500;
+  font-size: 20px;
+  display: inline-block;
+}
+/* #endregion */
+
+/* #region ABOUT */
+.about-me, .past-work {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+.about-me-heading {
+  width: 145px;
   border-bottom: 3px solid #272727;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* .pricing-table {
-  table-layout: fixed;
-  background: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-} */
+.past-work-heading {
+  width: 150px;
+  border-bottom: 3px solid #272727;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
-/* .pricing-table th, .pricing-table td {
-  border: 2px solid #272727;
-  padding: 1rem;
-} */
+/* #endregion */
 
+/* #region ENROLL */
+.enroll {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+.enroll-heading {
+  width: 85px;
+  border-bottom: 3px solid #272727;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
 /* #endregion */

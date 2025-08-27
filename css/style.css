@@ -24,6 +24,7 @@ header {
   background-color: #272727;
   color: #f9f9f9;
   padding: 1rem 2rem;
+  z-index:2;
 }
 
 .nav-container {
@@ -46,7 +47,7 @@ header {
   border: 5px solid #f9f9f9;
   text-shadow: 0px 0px 2px #272727;
   overflow: hidden;
-  z-index: 1;
+  z-index: 3;
   transition: transform 0.3s ease-out;
   background-color: transparent;
   color: white;
@@ -100,7 +101,7 @@ nav a.active:not(.enroll-btn) {
   position: relative;
   padding: 5px 15px;
   border-radius: 10px;
-  z-index: 0;
+  z-index: 3;
   background-color: #272727;
 }
 
@@ -320,7 +321,7 @@ nav {
   width: 100%;
 }
 
-.project-card {
+/* .project-card {
   width: 300px;
   background: #272727;
   border-radius: 15px;
@@ -438,12 +439,10 @@ nav {
 .carousel .owl-carousel .owl-nav button.owl-prev:hover, .carousel .owl-carousel .owl-nav button.owl-next:hover {
   transform: scale(1.1);
   
-}
+} */
 
 .projects-wrap {
-  max-width: 1100px;
-  margin: 0px auto;
-  padding: 0 20px;
+  width: 100%;
 }
 
 .projects-header {
@@ -455,7 +454,7 @@ nav {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -467,13 +466,14 @@ nav {
   border: 2px solid #ccc;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   padding: 5px;
-  z-index:-1;
+  z-index:1;
 }
+
 .projects-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,.15);
   border-color: #999;
-  z-index:-1;
+  z-index:1;
 }
 
 .projects-media {

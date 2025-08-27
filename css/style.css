@@ -464,13 +464,16 @@ nav {
   grid-template-rows: auto 1fr;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  padding: 5px;
+  z-index:-1;
 }
 .projects-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,.15);
   border-color: #999;
+  z-index:-1;
 }
 
 .projects-media {
@@ -689,6 +692,14 @@ nav {
   border-bottom: 3px solid #272727;
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.teaching-philosphy-heading, .experience-heading {
+  width: 145px;
+  border-bottom: 3px solid #272727;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-top:30px;
 }
 
 .past-work-heading {

@@ -607,7 +607,8 @@ nav {
 /* #endregion */
 
 /* #region TIME */
-.time-heading h1 {
+
+/* .time-heading h1 {
   display: inline-block;
   border-bottom: 3px solid #272727;
   font-size: 25px;
@@ -616,7 +617,67 @@ nav {
 
 .time-list li {
   margin-left:20px;
+} */
+
+/* TIME section container */
+.time {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
 }
+
+/* Section heading */
+.time-heading h1 {
+  display: inline-block;
+  font-size: 25px;
+  border-bottom: 3px solid #272727;
+  margin-bottom: 1rem;
+}
+
+/* Sub-headings (一对一课, 小组课) */
+.time-list h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0db6bf;
+  margin: 1rem 0 0.5rem;
+  border-left: 4px solid #0db6bf;
+  padding-left: 0.5rem;
+}
+
+/* Time list items */
+.time-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.time-list li {
+  background: #f3f3f3;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.time-list li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;       /* keep same text color */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.time-list li a:hover {
+  color: #0db6bf;       /* highlight on hover */
+}
+
+.time-list li:hover {
+  background: #e6f7f8; /* subtle hover highlight */
+}
+
 /* #endregion */
 
 /* #region ABOUT */
@@ -651,36 +712,61 @@ nav {
 /* #endregion */
 
 /* #region ENROLL */
+/* Enroll container */
 .enroll {
   max-width: 1200px;
-  margin: auto;
+  margin: 2rem auto;
   width: 100%;
+  text-align: center;   /* center all inline/heading text */
 }
 
+/* Heading */
 .enroll-heading {
-  width: 120px;
-  border-bottom: 3px solid #272727;
-  font-size: 20px;
+  display: inline-block;
+  border-bottom: 6px solid #272727;
+  line-height: 1.25;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
-.contact-methods {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  gap: 2rem;
-  
+/* normal part */
+.enroll-heading .plain-text {
+  color: #272727; /* or whatever your default text color is */
 }
 
+/* gradient part */
+.enroll-heading .gradient-text {
+  background: linear-gradient(160deg, #10c6d0, #1093cf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Contact methods wrapper */
+.contact-methods {
+  justify-content: center;   /* ⬅ center horizontally */
+  align-items: center;       /* ⬅ center vertically if rows differ */
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Each method */
 .contact-methods h3 {
   font-size: 20px;
   font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;   /* force text centered inside block */
 }
 
+/* WeChat QR */
 .wechat-qr {
   display: flex;
+  justify-content: center;  /* ⬅ center image inside wrapper */
   width: 100%;
   max-width: 200px;
+  margin: auto;
 }
+
 
 /* #endregion */

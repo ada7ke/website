@@ -23,6 +23,21 @@ document.querySelectorAll('.faq-question').forEach((question) => {
   });
 });
 
+// Smooth-scroll to #enroll with header offset
+document.querySelectorAll('.time-list a[href="#enroll"]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById('enroll');
+    if (!target) return;
+
+    const header = document.querySelector('header');
+    const offset = header ? header.offsetHeight : 0;
+
+    const y = target.getBoundingClientRect().top + window.pageYOffset - offset - 50; // small extra gap
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+});
+
 
 
 // $(document).ready(function() {

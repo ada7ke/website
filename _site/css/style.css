@@ -212,7 +212,7 @@ nav {
 /* #region HERO */
 .hero {
   background: linear-gradient(150deg, #0db6bf, #10384E);
-  padding: 9rem 2rem 6rem 2rem;
+  padding: 9rem 2rem;
   text-align: center;
   color: white;
   z-index: -1;
@@ -226,8 +226,8 @@ nav {
 /* #endregion */
 
 .content {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   max-width: 1200px;
   margin: 2rem auto;
   padding-inline: clamp(1rem, 10vw, 5rem);
@@ -238,19 +238,26 @@ nav {
 /* #region HOME */
 .main-page {
   flex: 3 1;
+  gap: 5rem 5rem;
+}
+
+.main-page > section {
+  margin-bottom: 1.5rem;  /* vertical gap between sections */
 }
 
 /* #region CLASS OVERVIEW */
-.class-overview-heading {
-  width: 120px;
+.class-overview-heading h1{
+  display: inline-block;
   border-bottom: 3px solid #272727;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 /* #endregion */
 
 /* #region ABOUT ME */
 .introduction {
+  float:right;
+  margin: 0 0 1.5rem 2rem;
   background: linear-gradient(130deg, #3a4a60, #1e2836);
   padding: 2rem;
   border-radius: 20px;
@@ -261,16 +268,35 @@ nav {
   align-items: center;
   text-align: center;
   color: #ffffff;
+  align-self: flex-start;
+  width: clamp(220px, 30%, 360px);
+}
+
+.content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 800px) {
+  .introduction {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
 }
 
 .profile-pic-wrapper {
   width: 90%;
+  max-width: 250px;      /* ⬅ hard cap everywhere */
+  flex: 0 0 auto;        /* ⬅ don't let flex stretch it */
+  align-self: center;    /* ⬅ center within the intro card */
+  margin: 0 auto 1rem;   /* ⬅ center horizontally + spacing below */
   aspect-ratio: 1 / 1;
   padding: 4%;
   background: #eeeeee;
   border-radius: 50%;
   box-sizing: border-box;
-  margin-bottom: 1rem;
 }
 
 .profile-pic {
@@ -284,9 +310,31 @@ nav {
 
 .introduction-heading {
   border-bottom: 2px solid white;
-  width: 110px;
+  display: inline-block;
+  padding: 0 2rem;
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+/* Mobile / narrow screens: stack, intro last */
+@media (max-width: 800px) {
+  /* switch the container to a vertical stack */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* cancel the float and make it full width */
+  .introduction {
+    float: none;
+    width: 100%;
+    margin: 1.5rem 0 0; /* top space from main content */
+    order: 2;           /* <-- push to bottom */
+  }
+
+  .main-page {
+    order: 1;           /* <-- main content first */
+  }
 }
 /* #endregion */
 /* #endregion */
@@ -298,158 +346,31 @@ nav {
   width: 100%;
 }
 
-.curriculum-heading {
-  width: 182px;
+.curriculum-heading h1 {
+  display: inline-block;
   border-bottom: 3px solid #272727;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 
-.example-projects-heading {
-  width: 245px;
+.example-projects-heading h1 {
+  display: inline-block;
   border-bottom: 3px solid #272727;
   font-size: 20px;
   margin-bottom: 5px;
 }
 
 /* #region CAROUSEL */
-.carousel {
-  position: relative;
-  height: 350px;
-  overflow: hidden;
-  background-color: #f9f9f9;
-  width: 100%;
-}
-
-/* .project-card {
-  width: 300px;
-  background: #272727;
-  border-radius: 15px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: white;
-  z-index: 1;
-  margin: 30px auto;
-  transition: transform 1s ease, filter 1s ease;
-}
-
-.project-card img {
-  height: 200px;
-  object-fit: cover;
-  transition: filter 1s ease;
-  filter: blur(0px) brightness(100%);
-}
-
-.project-card h3 {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  text-align: center;
-  transition: transform 0.7s ease;
-}
-
-.project-card .applicable-languages {
-  padding: 0rem 2rem;
-  font-size: 1.1rem;
-  text-align: center;
-  opacity: 0%;
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-
-.project-card p {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  text-align: left;
-  opacity: 0%;
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-
-.owl-item .project-card {
-  transform: scale(0.9);
-  filter: brightness(70%);
-}
-
-.owl-item.active.center .project-card {
-  transform: scale(1.1);
-  filter: brightness(100%);
-}
-
-.owl-item.active.center .project-card:hover img{
-  filter: blur(7px) brightness(30%);
-}
-
-.owl-item.active.center .project-card:hover h3 {
-  transform: translateY(-195px);
-}
-
-.owl-item.active.center .project-card:hover h4 {
-  opacity: 100%;
-  transform: translateY(-210px);
-}
-
-.owl-item.active.center .project-card:hover p{
-  opacity: 100%;
-  transform: translateY(-220px);
-}
-
-.owl-nav {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.carousel .owl-carousel .owl-nav button.owl-prev,
-.carousel .owl-carousel .owl-nav button.owl-next {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.982);
-  border: 2px solid #0DB6BF;
-  box-shadow: 0px 0px 5px #0DB6BF;
-  display: flex;
-  justify-content: center;
-  font-size: 0;
-  transition: transform 0.3s ease;
-}
-
-.carousel .owl-carousel .owl-nav button.owl-prev::before, .carousel .owl-carousel .owl-nav button.owl-next::before {
-  font-size: 50px;
-  color: #0DB6BF;
-  position: relative;
-  bottom: 28px;
-  
-}
-
-.carousel .owl-carousel .owl-nav button.owl-prev::before {
-  content: '‹';
-  right: 1px;
-}
-
-.carousel .owl-carousel .owl-nav button.owl-next::before {
-  content: '›';
-  right: -1px;
-}
-
-.carousel .owl-carousel .owl-nav button.owl-prev:hover, .carousel .owl-carousel .owl-nav button.owl-next:hover {
-  transform: scale(1.1);
-  
-} */
 
 .projects-wrap {
   width: 100%;
 }
 
 .projects-header {
-  margin-bottom: 15px;
-  font-size: 30px;
+  display: inline-block;
+  font-size: 25px;
   border-bottom: 3px solid #272727;
-  width: 125px;
+  margin-bottom: 10px;
 }
 
 .projects-grid {
@@ -590,45 +511,63 @@ nav {
 
 /* #region PRICING */
 
-.pricing-heading {
-  width: 92px;
+.price {
+  width: 100%;
+  /* optional: match your site’s content width cap */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+/* heading style unchanged */
+.pricing-heading h1 {
+  display: inline-block;
   border-bottom: 3px solid #272727;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 
+/* ✅ GRID like example projects */
 .pricing-visual {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* tweak 280 to your desired minimum card width */
+  gap: 20px;
 }
 
+/* ✅ cards fill columns; remove flex/max-width caps */
 .pricing-visual > div {
   border-radius: 30px;
-  padding: 2rem 2rem;
-  max-width: 350px;
+  padding: 1.5rem;
+  /* remove flex rules & max-width so they can grow evenly */
+  /* max-width: 550px;  <-- remove */
+  /* flex: 1 1 250px;   <-- remove */
+  /* width: auto;       <-- not needed */
+  display: grid;                  /* lets the inner panel stretch nicely */
+  grid-template-rows: 1fr;        /* make the inner white panel fill height */
 }
 
-.option1 {
-  background: #0DB6BF;
-}
+/* colors */
+.option1 { background: #0DB6BF; }
+.option2 { background: #ffb429; }
+.option3 { background: #0dbf81; }
 
-.option2 {
-  background: #ffb429;
+.option-description {
+  padding: 0 1rem;
 }
-
-.option3 {
-  background: #0dbf81;
-}
-
+/* inner white panel */
 .pricing-info {
-  background: white;
-  padding: 1.5rem 2.5rem;
+  background: #fff;
+  padding: 1.5rem 1rem;
   box-shadow: 0 0 4px #2727277a;
   border-radius: 20px;
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+
+  /* stretch the panel to equalize heights across a row */
+  height: 100%;
+  display: grid;
+  align-content: start; /* keep content at top inside the panel */
 }
 
 .pricing-info-heading {
@@ -668,10 +607,10 @@ nav {
 /* #endregion */
 
 /* #region TIME */
-.time-heading {
-  width: 50px;
+.time-heading h1 {
+  display: inline-block;
   border-bottom: 3px solid #272727;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 

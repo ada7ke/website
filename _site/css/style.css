@@ -287,11 +287,11 @@ nav {
 }
 
 .profile-pic-wrapper {
-  width: 90%;
-  max-width: 250px;      /* ⬅ hard cap everywhere */
-  flex: 0 0 auto;        /* ⬅ don't let flex stretch it */
-  align-self: center;    /* ⬅ center within the intro card */
-  margin: 0 auto 1rem;   /* ⬅ center horizontally + spacing below */
+  width: 70%;
+  max-width: 250px;
+  flex: 0 0 auto;
+  align-self: center;
+  margin: 0 auto 1rem;
   aspect-ratio: 1 / 1;
   padding: 4%;
   background: #eeeeee;

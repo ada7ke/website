@@ -1,0 +1,15 @@
+# Jekyll configuration
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "coding-tutoring/pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "lighting"
+    values:
+      layout: "portfolio"

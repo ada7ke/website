@@ -43,24 +43,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Gallery data
 const galleries = {
   'hadestown': [
-    'https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=1200',
-    'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1200',
-    'https://images.unsplash.com/photo-1478147427282-58a87a120781?w=1200',
-    'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200'
+    '/lighting/galleries/hadestown/image%20(1).jpg',
+    '/lighting/galleries/hadestown/image%20(2).jpg',
+    '/lighting/galleries/hadestown/image%20(3).jpg',
+    '/lighting/galleries/hadestown/image%20(4).jpg',
+    '/lighting/galleries/hadestown/image%20(5).jpg',
+    '/lighting/galleries/hadestown/image%20(6).jpg'
   ],
   'hamilton': [
     'https://images.unsplash.com/photo-1503095396549-807759245b35?w=1200',
     'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=1200',
     'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200'
-  ],
-  'moulin-rouge': [
-    'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1200',
-    'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200'
-  ],
-  'wicked': [
-    'https://images.unsplash.com/photo-1518893063132-36e46dbe2428?w=1200',
-    'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200',
-    'https://images.unsplash.com/photo-1604263439201-171fb8c0fddc?w=1200'
   ]
 };
 
@@ -94,15 +87,13 @@ function openLightbox(index, gallery) {
   const lightbox = document.getElementById('lightbox');
   const img = document.getElementById('lightbox-img');
   img.src = galleries[gallery][index];
-  lightbox.classList.remove('hidden');
-  lightbox.classList.add('flex');
+  lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
-  lightbox.classList.add('hidden');
-  lightbox.classList.remove('flex');
+  lightbox.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
 
@@ -121,7 +112,7 @@ function previousImage() {
 // Keyboard navigation for lightbox
 document.addEventListener('keydown', (e) => {
   const lightbox = document.getElementById('lightbox');
-  if (!lightbox.classList.contains('hidden')) {
+  if (lightbox.classList.contains('active')) {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') previousImage();
@@ -134,6 +125,12 @@ let touchEndX = 0;
 
 const lightboxElement = document.getElementById('lightbox');
 if (lightboxElement) {
+  lightboxElement.addEventListener('click', (e) => {
+    if (e.target === lightboxElement) {
+      closeLightbox();
+    }
+  });
+
   lightboxElement.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
   });

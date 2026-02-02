@@ -25,13 +25,19 @@
 /* Gallery Images - 16:9 aspect ratio */
 .gallery-item img {
   aspect-ratio: 16 / 9;
-  object-fit: contain;
+  object-fit: cover;
   background-color: #0a0a0a;
+  width: 100%;
+  height: auto;
 }
 
 /* Active button state */
 .show-btn.active {
   border-color: #d4af37;
+  color: #d4af37;
+}
+
+.show-year {
   color: #d4af37;
 }
 
@@ -55,4 +61,102 @@
 
 .fade-in.visible {
   animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: 80vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 34px;
+  right: 34px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #d4af37a1;
+  border: 2px solid #d4af37a1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.lightbox-close:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: scale(1.05);
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+/* Lightbox navigation buttons */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 144px;
+  height: 144px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;  
+}
+
+.lightbox-nav:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-prev {
+  left: 24px;
+  margin: 20px;
+  font-size: 40px;
+  color: #d4af37a1;
+}
+
+.lightbox-next {
+  right: 24px;
+  margin: 20px;
+  font-size: 40px;
+  color: #d4af37a1;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover {
+  color: #d4af37;
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+.contact-text {
+  color: #d4af37
 }

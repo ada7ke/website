@@ -10,6 +10,10 @@ defaults:
     values:
       layout: "default"
   - scope:
+      path: "index.html"
+    values:
+      layout: "default"
+  - scope:
       path: "lighting"
     values:
       layout: "portfolio"

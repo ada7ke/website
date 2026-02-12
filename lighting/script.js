@@ -43,17 +43,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Gallery data
 const galleries = {
   'hadestown': [
-    '/lighting/galleries/hadestown/image%20(1).jpg',
-    '/lighting/galleries/hadestown/image%20(2).jpg',
-    '/lighting/galleries/hadestown/image%20(3).jpg',
-    '/lighting/galleries/hadestown/image%20(4).jpg',
-    '/lighting/galleries/hadestown/image%20(5).jpg',
-    '/lighting/galleries/hadestown/image%20(6).jpg'
+    'galleries/hadestown/image (1).jpg',
+    'galleries/hadestown/image (2).jpg',
+    'galleries/hadestown/image (3).jpg',
+    'galleries/hadestown/image (4).jpg',
+    'galleries/hadestown/image (5).jpg',
+    'galleries/hadestown/image (6).jpg'
   ],
-  'hamilton': [
-    'https://images.unsplash.com/photo-1503095396549-807759245b35?w=1200',
-    'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=1200',
-    'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200'
+  'blank': [
   ]
 };
 

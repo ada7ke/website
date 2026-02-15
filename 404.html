@@ -1,0 +1,284 @@
+---
+permalink: /404.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ada's Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 300px);
+    padding: 20px 10px;
+    text-align: left;
+  }
+
+  .error-content {
+    max-width: 600px;
+    
+  }
+
+  .error-heading {
+    text-align: center;
+  }
+
+  .error-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff6b6b;
+  }
+
+  .digit {
+    font-size: 120px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .zero {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .spinner {
+    transform-origin: 50% 50%;
+    animation: spin 16s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+
+  .triangle {
+    transform-origin: 50% 50%;
+    animation: spinReverse 8s linear infinite;
+  }
+
+  @keyframes spinReverse {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+  }
+
+  .spinner, .triangle {
+    transform-box: fill-box;
+  }
+
+  .error-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+  }
+
+  .error-message {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .error-links {
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  .error-links h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+    text-align: left;
+  }
+
+  .error-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .error-links li {
+    margin: 1px 0;
+  }
+
+  .error-links a {
+    font-size: 13px;
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .error-links a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+  }
+
+  .language-selector {
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+  }
+
+  .language-selector label {
+    margin-right: 10px;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+  }
+
+  .language-selector select {
+    padding: 8px 8px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+  }
+
+  .language-selector select:hover {
+    border-color: #0066cc;
+  }
+
+  .hero {
+    display: none !important;
+  }
+  </style>
+</head>
+
+<body>
+<div class="error-container">
+  <div class="error-content">
+    <div class="error-heading">
+        <div class="error-code">
+           <div class="digit">4</div>
+
+            <div class="zero">
+                <svg viewBox="0 0 200 200">
+
+                    <g class="spinner">
+
+                        <!-- bars -->
+                        <g fill="#ff6b6b">
+                        <rect x="87.5" y="15" width="25" height="170"/>
+                        <rect x="87.5" y="15" width="25" height="170"
+                                transform="rotate(45 100 100)"/>
+                        <rect x="87.5" y="15" width="25" height="170"
+                                transform="rotate(90 100 100)"/>
+                        <rect x="87.5" y="15" width="25" height="170"
+                                transform="rotate(135 100 100)"/>
+                        </g>
+
+                        <!-- center triangle -->
+                        <polygon class="triangle"
+                        points="
+                            100,82.5
+                            130,112.5
+                            70,112.5
+                        "
+                        fill="#ffffff"/>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+            <div class="digit">4</div>
+        </div>
+        <div class="error-title" id="title">You got lost.</div>
+    </div>
+    
+    <div class="error-message" id="message"></div>
+    <div class="error-links">
+      <h3 id="suggestions-heading"></h3>
+      <ul>
+        <li>
+          <a href="{{ '/index.html' | relative_url }}" id="link1-text"></a>
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/lighting/portfolio.html' | relative_url }}" id="link2-text"></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="language-selector">
+      <label for="language-dropdown" id="language-label">Language:</label>
+      <select id="language-dropdown" onchange="switchLanguage()">
+        <option value="en">English</option>
+        <option value="zh">中文 (Chinese)</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<script>
+  const translations = {
+    en: {
+      title: 'You are lost.',
+      message: 'the page you\'re looking for doesn\'t exist',
+      suggestionsHeading: 'let\'s take you somewhere that does:',
+      link1: 'Coding Tutoring',
+      link2: 'Lighting Design Portfolio',
+      languageLabel: 'Language:'
+    },
+    zh: {
+      title: '页面未找到',
+      message: '抱歉，您访问的页面不存在。',
+      suggestionsHeading: '以下是您可能要查找的页面：',
+      link1: '编程辅导',
+      link2: '灯光作品集',
+      languageLabel: '语言：'
+    }
+  };
+
+  function switchLanguage() {
+    const dropdown = document.getElementById('language-dropdown');
+    const lang = dropdown.value;
+    
+    document.getElementById('title').textContent = translations[lang].title;
+    document.getElementById('message').textContent = translations[lang].message;
+    document.getElementById('suggestions-heading').textContent = translations[lang].suggestionsHeading;
+    document.getElementById('link1-text').textContent = translations[lang].link1;
+    document.getElementById('link2-text').textContent = translations[lang].link2;
+    document.getElementById('language-label').textContent = translations[lang].languageLabel;
+    
+    // Store language preference in localStorage
+    localStorage.setItem('preferred-language', lang);
+  }
+
+  // Load language preference on page load
+  window.addEventListener('load', function() {
+    const savedLang = localStorage.getItem('preferred-language') || 'en';
+    document.getElementById('language-dropdown').value = savedLang;
+    switchLanguage();
+  });
+</script>
+
+</body>
+</html>

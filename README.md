@@ -1,3 +1,3 @@
-coding tutoring page: https://ada7ke.github.io/website/index.html
+coding tutoring page: https://ada7ke.github.io/index.html
 
-lighting design portfolio: https://ada7ke.github.io/website/lighting/portfolio.html
+lighting design portfolio: https://ada7ke.github.io/lighting/portfolio.html

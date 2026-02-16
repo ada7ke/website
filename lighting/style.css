@@ -11,8 +11,6 @@
   );
 }
 
-
-
 /* Gallery transition styles */
 .gallery-content {
   transition: opacity 0.3s ease-in-out;
@@ -159,4 +157,122 @@
 
 .contact-text {
   color: #d4af37
+}
+
+
+/* Hero Layout */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* Blob Container */
+.blobs {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  left: -20%;
+  top: -20%;
+  z-index: 1;
+  filter: blur(80px);
+}
+
+/* Blob Base */
+.blob {
+  position: absolute;
+  width: clamp(320px, 50vw, 1000px);
+  height: clamp(320px, 50vw, 1000px);
+  opacity: 0.7;
+
+  animation-name: float, blobMorph;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: alternate, alternate;
+
+  will-change: transform, border-radius;
+}
+
+/* Individual Blobs */
+
+.blob1 {
+  top: 5%;
+  left: 15%;
+  background: radial-gradient(circle at 30% 30%, #8c31a3, #6365f100);
+  animation-duration: 18s, 11s;
+  animation-delay: -4s, -2s;
+}
+
+.blob2 {
+  top: 5%;
+  left: 60%;
+  background: radial-gradient(circle at 70% 70%, #862757, #f43f5d00);
+  animation-duration: 26s, 14s;
+  animation-delay: -10s, -6s;
+}
+
+.blob3 {
+  top: 40%;
+  left: 50%;
+  background: radial-gradient(circle at 50% 50%, #6366f1, #8a5cf600);
+  animation-duration: 32s, 18s;
+  animation-delay: 1s, -11s;
+}
+
+.blob4 {
+  top: 20%;
+  left: 30%;
+  background: radial-gradient(circle at 40% 60%, #0c5985, #0ea4e900);
+  animation-duration: 24s, 13s;
+  animation-delay: -7s, -1s;
+}
+
+.blob5 {
+  top: 50%;
+  left: 20%;
+  background: radial-gradient(circle at 40% 60%, #352383, #f18b6300);
+  animation-duration: 38s, 21s;
+  animation-delay: -20s, -18s;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, -60px) scale(1.1);
+  }
+  100% {
+    transform: translate(-30px, 50px) scale(0.9);
+  }
+}
+
+/* Dramatic Morph Animation */
+@keyframes blobMorph {
+  0% {
+    border-radius: 20% 80% 60% 40% / 30% 70% 30% 70%;
+  }
+  33% {
+    border-radius: 75% 25% 35% 65% / 65% 35% 65% 35%;
+  }
+  66% {
+    border-radius: 40% 60% 80% 20% / 20% 80% 20% 80%;
+  }
+  100% {
+    border-radius: 20% 80% 60% 40% / 30% 70% 30% 70%;
+  }
 }
